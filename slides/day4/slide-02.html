@@ -7,24 +7,26 @@
 <style>
   body { display: flex; flex-direction: column; }
   .cards4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12pt; margin-top: 20pt; flex: 1; }
-  .c { padding: 20pt 16pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 10pt; }
+  .c { padding: 20pt 16pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 9pt; }
   .c .num { font-size: 9pt; letter-spacing: 0.2em; font-weight: 700; color: #b45a34; text-transform: uppercase; }
-  .c h4 { font-size: 15.5pt; font-weight: 700; color: #2b2520; line-height: 1.25; }
+  .c .tag { font-size: 8pt; letter-spacing: 0.1em; font-weight: 700; color: #a0917e; text-transform: uppercase; }
+  .c h4 { font-size: 14.5pt; font-weight: 700; color: #2b2520; line-height: 1.25; }
+  .c .sub { font-size: 10.5pt; line-height: 1.45; color: #7d6b5a; font-weight: 500; }
   .emph { margin-top: 16pt; padding: 15pt 20pt; background: #2b2520; border-radius: 10pt; display: flex; align-items: center; gap: 14pt; }
   .emph .lbl { font-size: 10pt; font-weight: 700; color: #ffd9bf; letter-spacing: 0.06em; white-space: nowrap; }
   .emph .txt { font-size: 13.5pt; font-weight: 600; color: #fff; line-height: 1.35; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">오늘 4블록</div>
+  <div class="eyebrow">오늘 4블록 — 슬라이드 강의 + 스킬 실습</div>
   <div class="h-large">무엇을 하나</div>
   <div class="rule"></div>
 
   <div class="cards4">
-    <div class="c"><div class="num">01</div><h4>까다로운 프로스펙트 검증</h4></div>
-    <div class="c"><div class="num">02</div><h4>팩트체크 6단계</h4></div>
-    <div class="c"><div class="num">03</div><h4>주간 루틴 조립</h4></div>
-    <div class="c"><div class="num">04</div><h4>2주차 프로젝트 정하기</h4></div>
+    <div class="c"><div class="num">01</div><div class="tag">강의</div><h4>팩트체크 6단계</h4><div class="sub">출처·1차 출처·단정 금지로 AI 거짓을 걸러낸다</div></div>
+    <div class="c"><div class="num">02</div><div class="tag">강의</div><h4>의사결정 로그</h4><div class="sub">시킨 것·근거·결과를 남겨 매주 더 잘 시킨다</div></div>
+    <div class="c"><div class="num">03</div><div class="tag">실습</div><h4>프로스펙트 검증</h4><div class="sub">받는 사람 페르소나가 내 결과물을 냉정히 채점한다</div></div>
+    <div class="c"><div class="num">04</div><div class="tag">실습</div><h4>조립 + 프로젝트</h4><div class="sub">스킬을 주간 루틴으로 엮고 2주차 프로젝트를 정한다</div></div>
   </div>
 
   <div class="emph">
