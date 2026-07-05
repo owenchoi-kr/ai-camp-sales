@@ -16,9 +16,21 @@
 
 Gmail은 사내 **`gws` CLI**로 가져오는 게 기본 경로다. 터미널에서 명령어로 내 Gmail 스레드를 검색하는 방식이다 (Day 1에 배운 CLI).
 
-> ⚠️ **`gws`의 정확한 명령·플래그는 운영진 배포 가이드를 참조한다.**
-> 명령 형태는 대략 `gws gmail ...`이지만, 정확한 검색 문법은 사내 가이드에 있다.
-> Claude가 명령을 **지어내지 않는다** — 가이드의 실제 명령을 확인해 사용한다.
+계정 도메인으로 최근 메일을 검색한다. `q`는 Gmail 검색창에서 쓰는 문법 그대로다:
+
+```
+gws gmail users messages list --params '{"userId":"me","q":"from:{도메인} OR to:{도메인}","maxResults":20}'
+```
+
+메일 하나의 본문까지 보려면 위에서 나온 `id`로:
+
+```
+gws gmail users messages get --params '{"userId":"me","id":"{메시지ID}"}'
+```
+
+> `{도메인}`은 계정 이메일 도메인(예: `company.com`)으로 바꾼다.
+> 검색 옵션을 더 좁히려면 `gws schema gmail.users.messages.list`로 `q` 문법을 확인한다.
+> Claude는 명령을 지어내지 않는다 — 위 명령이 안 되면 아래 Plan B로 간다.
 
 ### 연결이 안 되면? — 3단 안전망
 
@@ -53,9 +65,9 @@ AskUserQuestion({
 
 **gws CLI인 경우:**
 ```
-1. 운영진 배포 가이드에서 gws Gmail 검색 명령을 확인한다
-2. 테스트 계정 도메인(예: @company.com)으로 최근 스레드를 검색해본다
-3. 스레드 제목·날짜가 나오면 성공
+1. 위 EXPLAIN의 gws gmail users messages list 명령을 복사한다
+2. {도메인}을 테스트 계정 도메인(예: company.com)으로 바꿔 실행한다
+3. 메시지 id 목록이 나오면 성공. 본문은 messages get으로 확인한다
 ```
 
 **커넥터(Plan B)인 경우:**
