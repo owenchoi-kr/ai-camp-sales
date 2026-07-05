@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 · 05 루프 쌓기</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .blocks { display: grid; grid-template-columns: 1fr 1fr; gap: 14pt; flex: 1; margin-top: 22pt; }
+  .blk { padding: 24pt 24pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 12pt; }
+  .blk.terra { background: #c56a4a; color: #f7efe4; }
+  .blk .tag { font-size: 10.5pt; letter-spacing: 0.12em; font-weight: 700; color: #b45a34; text-transform: uppercase; }
+  .blk.terra .tag { color: #ffd9bf; }
+  .blk .body { font-size: 16.5pt; font-weight: 700; color: #2b2520; line-height: 1.35; margin-top: auto; }
+  .blk.terra .body { color: #fff; }
+  .emph { margin-top: 16pt; padding: 15pt 20pt; background: #2b2520; border-radius: 10pt; display: flex; align-items: center; justify-content: center; }
+  .emph .txt { font-size: 15pt; font-weight: 700; color: #fff; line-height: 1.35; letter-spacing: 0.01em; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">AI로 계속 나아지기</div>
+  <div class="h-large">의사결정 로그에 루프 쌓기</div>
+  <div class="rule"></div>
+
+  <div class="blocks">
+    <div class="blk terra">
+      <div class="tag">남긴다</div>
+      <div class="body">뭘 시켰나 · 왜 · 결과가 어땠나</div>
+    </div>
+    <div class="blk">
+      <div class="tag">주 1회 5분 회고</div>
+      <div class="body">잘된 프롬프트는 템플릿에, 틀린 패턴은 규칙에</div>
+    </div>
+  </div>
+
+  <div class="emph">
+    <div class="txt">Build → Use → Notice → Fix — 한 주에 한 바퀴</div>
+  </div>
+</body>
+</html>
