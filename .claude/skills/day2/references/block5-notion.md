@@ -43,7 +43,7 @@ AskUserQuestion({
 })
 ```
 
-> 계정 문서를 Notion이 아니라 스프레드시트·Salesforce 등 다른 데 두는 참가자는 **붙여넣기 모드**로 그 내용을 가져오면 된다.
+> 계정 문서를 Notion이 아니라 스프레드시트 등 다른 데 두는 참가자는 **붙여넣기 모드**로 그 내용을 가져오면 된다. (딜/Opportunity는 소스 5 Salesforce에서 따로 다룬다.)
 
 ### Step 2: 연결 확인·테스트
 
@@ -106,6 +106,7 @@ AskUserQuestion({
   소스 2: Circleback  ✅
   소스 3: Notion      ✅ 채움!
   소스 4: Slack       [STUB]
+  소스 5: Salesforce  [STUB]
 ```
 
 ## QUIZ

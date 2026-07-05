@@ -70,14 +70,16 @@
 ### 결석자 처리
 Day를 통째로 놓쳐도 `/dayN`을 혼자 돌리면 따라잡는다. 진행자는 "못 온 사람은 오늘 중 `/dayN` 돌리고 산출물만 Slack에 올려주세요" 한 줄이면 된다.
 
-### Day별 요점
+### Day별 요점 + 블록별 상세 대본
 
-| Day | 앵커 | 스킬 | 산출물 | 그날의 핵심 |
-|-----|------|------|--------|-------------|
-| 1 | `slides/day1` (3장) | `/day1` | CLAUDE.md | 데모로 체험 먼저, 그다음 내 프로필 |
-| 2 | `slides/day2` (3장) | `/day2` | my-account-sync | STUB 4개를 하나씩 채우며 도구 연결 |
-| 3 | `slides/day3` (3장) | `/day3` | 내 업무 스킬 1개 | 템플릿 슬롯 3개만 내 맥락으로 |
-| 4 | `slides/day4` (6장) | `/day4` | 프로젝트 계획 | **팩트체크 6단계·의사결정 로그를 여기서 슬라이드로 강의** |
+**각 Day의 블록별 진행 대본(몇 분·강사 멘트·참가자 행동·STOP·막히는 곳·슬라이드)은 별도 문서에 있다. 강의 준비할 때 이걸 펼쳐놓는다:**
+
+| Day | 앵커 | 스킬 | 산출물 | 강사 대본 | 그날의 핵심 |
+|-----|------|------|--------|-----------|-------------|
+| 1 | `slides/day1` (3장) | `/day1` | CLAUDE.md | [day1-facilitator.md](day1-facilitator.md) | 데모로 체험 먼저, 그다음 내 프로필 |
+| 2 | `slides/day2` (3장) | `/day2` | my-account-sync | [day2-facilitator.md](day2-facilitator.md) | STUB 5개(Gmail·Circleback·Notion·Slack·Salesforce)를 하나씩 채우며 도구 연결 |
+| 3 | `slides/day3` (3장) | `/day3` | 내 업무 스킬 1개 | [day3-facilitator.md](day3-facilitator.md) | 템플릿 슬롯 3개만 내 맥락으로 |
+| 4 | `slides/day4` (6장) | `/day4` | 프로젝트 계획 | [day4-facilitator.md](day4-facilitator.md) | **팩트체크·의사결정 로그를 슬라이드로 강의 + 검증·조립 실습** |
 
 Day 4만 앵커가 6장이다. 검증(까다로운 프로스펙트) + 팩트체크 6단계 + 의사결정 로그를 슬라이드로 다룬 뒤 스킬 실습으로 넘어간다. 세일즈에 사실이 생명이라, 이 부분은 진행자가 말로 강조한다.
 

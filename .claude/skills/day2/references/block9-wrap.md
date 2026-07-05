@@ -1,4 +1,4 @@
-# Block 8: Wrap — 자가진단 + Day 3 예고
+# Block 9: Wrap — 자가진단 + Day 3 예고
 
 > 오늘 만든 스킬이 살아있는지 자가진단하고, 내일을 예고한다.
 > Phase A는 오늘 정리 → Stop. Phase B는 자가진단 3문항 연속 + Day 3 예고.
@@ -13,21 +13,22 @@
 Day 1 산출물:  CLAUDE.md (내 기본값 한 장)
         +
 Day 2 산출물:  my-account-sync (내 스킬 하나)
-                계정명 → Gmail·Circleback·Notion·Slack → 히스토리 브리핑
+                계정명 → Gmail·Circleback·Notion·Slack·Salesforce → 히스토리 브리핑
 ```
 
 **어떻게 만들었나 — 오늘의 리듬:**
 
 ```
-빈 뼈대(STUB 4개)
+빈 뼈대(STUB 5개)
   → Gmail 채우고 실행  (소스 1개, 밋밋)
   → Circleback 채우고 실행  (소스 2개)
   → Notion 채우고 실행  (소스 3개)
-  → Slack 채우고 실행  (소스 4개, 360도)
+  → Slack 채우고 실행  (소스 4개)
+  → Salesforce 채우고 실행  (소스 5개, 360도)
   = 채울 때마다 브리핑이 두꺼워졌다
 ```
 
-도구 연결(MCP)을 따로 외우지 않았다. **스킬을 만드는 과정에서** Gmail은 CLI로, Circleback·Notion은 MCP로, Slack은 커넥터로 — 방법이 다른 걸 몸으로 지나왔다. 이게 "만들면서 배운다"다.
+도구 연결(MCP)을 따로 외우지 않았다. **스킬을 만드는 과정에서** Gmail은 CLI로, Circleback·Notion은 MCP로, Slack은 커넥터로, Salesforce는 붙여넣기로 — 방법이 다른 걸 몸으로 지나왔다. 이게 "만들면서 배운다"다.
 
 **이 스킬의 진짜 가치:** 콜 잡히면 30분씩 뒤지던 걸 "이 계정 싱크해줘" 한 마디로 줄였다. 그리고 이건 **내일의 출발점**이다.
 
@@ -53,7 +54,7 @@ AskUserQuestion({
     "question": "지금 my-account-sync에 계정명을 넣으면, 콜에 그대로 들고 갈 브리핑이 나오나요?",
     "header": "자가진단 1/3",
     "options": [
-      {"label": "나온다", "description": "지난 약속·다음 액션·콜 목표까지 채워짐"},
+      {"label": "나온다", "description": "지난 약속·다음 액션·딜 현황·콜 목표까지 채워짐"},
       {"label": "나오는데 얇다", "description": "소스가 1~2개만 연결됨 → 나머지는 나중에 붙이면 두꺼워짐"},
       {"label": "아직 안 돌려봤다", "description": "오늘 밤 담당 계정 하나로 꼭 돌려보기"}
     ],
@@ -62,7 +63,7 @@ AskUserQuestion({
 })
 ```
 
-> 피드백: 소스 2개만 돼도 이미 쓸 만하다. 나머지 소스는 나중에 커넥터/붙여넣기로 붙이면 같은 스킬이 자동으로 더 두꺼운 브리핑을 낸다.
+> 피드백: 소스 2~3개만 돼도 이미 쓸 만하다. 나머지 소스는 나중에 커넥터/붙여넣기로 붙이면 같은 스킬이 자동으로 더 두꺼운 브리핑을 낸다.
 
 ### 자가진단 2
 
@@ -72,7 +73,7 @@ AskUserQuestion({
     "question": "소스가 하나도 연결 안 돼도 이 스킬을 쓸 수 있나요?",
     "header": "자가진단 2/3",
     "options": [
-      {"label": "쓸 수 있다 — 붙여넣기 모드", "description": "메일·미팅노트를 복사해 붙여넣으면 똑같이 브리핑이 나온다"},
+      {"label": "쓸 수 있다 — 붙여넣기 모드", "description": "메일·미팅노트·SFDC 화면을 복사해 붙여넣으면 똑같이 브리핑이 나온다"},
       {"label": "못 쓴다", "description": "아니다 — 연결이 목적이 아니라 브리핑이 목적이다"}
     ],
     "multiSelect": false
@@ -80,26 +81,26 @@ AskUserQuestion({
 })
 ```
 
-> 피드백: 연결은 편의고, 붙여넣기는 안전망이다. 스킬의 본질은 "흩어진 접점을 한 장으로 통합"하는 것 — 재료를 어떻게 넣든 결과는 같다.
+> 피드백: 연결은 편의고, 붙여넣기는 안전망이다. 스킬의 본질은 "흩어진 접점을 한 장으로 통합"하는 것 — 재료를 어떻게 넣든 결과는 같다. 특히 Salesforce는 대부분 웹 붙여넣기가 기본 경로다.
 
 ### 자가진단 3
 
 ```json
 AskUserQuestion({
   "questions": [{
-    "question": "4개 소스가 브리핑에 채우는 조각이 각각 다릅니다. Slack(내부 논의)이 주는 건?",
+    "question": "5개 소스가 브리핑에 채우는 조각이 각각 다릅니다. Salesforce가 주는 건?",
     "header": "자가진단 3/3",
     "options": [
-      {"label": "우리 팀의 입장·이슈 히스토리", "description": "정답. 나머지 셋은 상대와의 접점"},
+      {"label": "열린 딜의 단계·금액·Close Date", "description": "정답. CRM에 박힌 파이프라인 팩트"},
       {"label": "상대가 콜에서 한 말", "description": "그건 Circleback(미팅노트)"},
-      {"label": "계약 규모·플랜", "description": "그건 Notion(문서)"}
+      {"label": "우리 팀 내부의 합의된 입장", "description": "그건 Slack(내부 논의)"}
     ],
     "multiSelect": false
   }]
 })
 ```
 
-> 피드백: Gmail=주고받은 말, Circleback=상대의 말·약속, Notion=상태·팩트, Slack=우리 팀 입장. 네 조각이 다 모여야 360도 브리핑이다.
+> 피드백: Gmail=주고받은 말, Circleback=상대의 말·약속, Notion=상태·팩트, Slack=우리 팀 입장, Salesforce=딜의 단계·금액. 다섯 조각이 다 모여야 360도 브리핑이다.
 
 ### 마무리 — Day 3 예고
 

@@ -1,6 +1,6 @@
 ---
 name: day2
-description: AI Camp Sales Day 2 — 내 계정 리서치 스킬(my-account-sync)을 "만들면서" 도구를 연결한다. 빈 뼈대에 소스 4개(Gmail·Circleback·Notion·Slack)를 하나씩 채워 계정명 하나로 히스토리 브리핑이 나오는 내 스킬을 완성한다. 라이브 수업 진행용 + 결석자 self-paced용. "day2", "데이투", "2일차", "Day 2" 요청에 사용.
+description: AI Camp Sales Day 2 — 내 계정 리서치 스킬(my-account-sync)을 "만들면서" 도구를 연결한다. 빈 뼈대에 소스 5개(Gmail·Circleback·Notion·Slack·Salesforce)를 하나씩 채워 계정명 하나로 히스토리 브리핑이 나오는 내 스킬을 완성한다. 라이브 수업 진행용 + 결석자 self-paced용. "day2", "데이투", "2일차", "Day 2" 요청에 사용.
 ---
 
 # Day 2: 내 계정 리서치 스킬 만들기
@@ -13,7 +13,7 @@ description: AI Camp Sales Day 2 — 내 계정 리서치 스킬(my-account-sync
 
 > **오늘의 목적지**: 퇴근할 때 여러분 손에 **스킬이 하나** 생긴다.
 > 계정명 하나만 넣으면 그 계정과의 과거 히스토리 브리핑이 나오는 `my-account-sync`.
-> 도구 연결(MCP)을 따로 외우지 않는다. **이 스킬을 만드는 과정에서** Gmail·Circleback·Notion·Slack이 하나씩 붙는다.
+> 도구 연결(MCP)을 따로 외우지 않는다. **이 스킬을 만드는 과정에서** Gmail·Circleback·Notion·Slack·Salesforce가 하나씩 붙는다.
 
 ---
 
@@ -47,7 +47,7 @@ description: AI Camp Sales Day 2 — 내 계정 리서치 스킬(my-account-sync
 │ 5. ⛔ 여기서 반드시 STOP. 턴을 종료한다.                    │
 │                                                          │
 │ ❌ 절대 하지 않는 것: 퀴즈 출제, QUIZ 섹션 읽기             │
-│ ❌ 절대 하지 않는 것: AskUserQuestion 호출 (Block 3~8 제외) │
+│ ❌ 절대 하지 않는 것: AskUserQuestion 호출 (Block 3~9 제외) │
 │ ❌ 절대 하지 않는 것: "실행해봤나요?" 질문                   │
 └──────────────────────────────────────────────────────────┘
 
@@ -64,7 +64,7 @@ description: AI Camp Sales Day 2 — 내 계정 리서치 스킬(my-account-sync
 
 ### 핵심 금지 사항 (절대 위반 금지)
 
-1. **Phase A에서 AskUserQuestion을 호출하지 않는다 (Block 3, 4, 5, 6, 7, 8 제외)** — 이 6개 블록은 도구 사용 여부 확인·출력 선택이 필수라 예외
+1. **Phase A에서 AskUserQuestion을 호출하지 않는다 (Block 3, 4, 5, 6, 7, 8, 9 제외)** — 이 7개 블록은 도구 사용 여부 확인·출력 선택이 필수라 예외
 2. **Phase A에서 퀴즈를 내지 않는다** — QUIZ 섹션은 Phase B에서만 읽는다
 3. **Phase A에서 "실행해봤나요?"를 묻지 않는다** — 사용자가 먼저 말할 때까지 기다린다
 4. **한 턴에 EXPLAIN + QUIZ를 동시에 하지 않는다** — 반드시 2턴으로 나눈다
@@ -106,26 +106,28 @@ Phase A 마지막에는 반드시 아래 문구를 출력하고 Stop한다:
 |-------|------|--------|
 | 0 | Recap | Day 1 회고 + 숙제 점검(도구 1개 연결했나) + 오늘 예고 |
 | 1 | MCP | MCP 개념 압축 (USB-C 반 페이지) + 연결 방법이 여러 가지라는 것 |
-| 2 | 스켈레톤 | `my-account-sync` 빈 뼈대 생성 (STUB 4개) |
+| 2 | 스켈레톤 | `my-account-sync` 빈 뼈대 생성 (STUB 5개) |
 | 3 | 소스① Gmail | 이 계정과 주고받은 메일 — gws CLI (Plan B: Gmail 커넥터) |
 | 4 | 소스② Circleback | 이 계정과의 지난 미팅노트 — Circleback MCP |
 | 5 | 소스③ Notion | 계정 페이지·세일즈 문서 — Notion MCP |
 | 6 | 소스④ Slack | 이 계정 관련 내부 논의 — Slack MCP |
-| 7 | 완성 + 실전 | 4소스 병렬 수집 + 출력 포맷 확정 + 실제 담당 계정 1개로 실행 |
-| 8 | Wrap | 자가진단 3문항 + Day 3 예고 |
+| 7 | 소스⑤ Salesforce | 이 계정의 딜/Opportunity — SFDC 웹 붙여넣기(기본) / 연결 시 조회 |
+| 8 | 완성 + 실전 | 5소스 병렬 수집 + 출력 포맷 확정 + 실제 담당 계정 1개로 실행 |
+| 9 | Wrap | 자가진단 3문항 + Day 3 예고 |
 
 ### 점진적 빌드 — STUB 채움 순서
 
 ```
-Block 2:  [STUB Gmail] [STUB Circleback] [STUB Notion] [STUB Slack] ← 빈 뼈대
-Block 3:  [Gmail]      [STUB]            [STUB]         [STUB]       → 1소스로 실행해보기
-Block 4:  [Gmail]      [Circleback]      [STUB]         [STUB]       → 2소스로 실행해보기
-Block 5:  [Gmail]      [Circleback]      [Notion]       [STUB]       → 3소스로 실행해보기
-Block 6:  [Gmail]      [Circleback]      [Notion]       [Slack]      → 4소스로 실행해보기
-Block 7:  [완성!] 병렬 수집 + 출력 포맷 확정 + 실전 계정 1개로 히스토리 브리핑
+Block 2:  [STUB Gmail] [STUB Circleback] [STUB Notion] [STUB Slack] [STUB Salesforce] ← 빈 뼈대
+Block 3:  [Gmail]      [STUB]            [STUB]        [STUB]        [STUB]             → 1소스로 실행해보기
+Block 4:  [Gmail]      [Circleback]      [STUB]        [STUB]        [STUB]             → 2소스로 실행해보기
+Block 5:  [Gmail]      [Circleback]      [Notion]      [STUB]        [STUB]             → 3소스로 실행해보기
+Block 6:  [Gmail]      [Circleback]      [Notion]      [Slack]       [STUB]             → 4소스로 실행해보기
+Block 7:  [Gmail]      [Circleback]      [Notion]      [Slack]       [Salesforce]       → 5소스로 실행해보기
+Block 8:  [완성!] 병렬 수집 + 출력 포맷 확정 + 실전 계정 1개로 히스토리 브리핑
 ```
 
-> **핵심**: 4개 소스를 한 번에 붙이지 않는다. 블록마다 소스 하나를 채우고 **그 자리에서 my-account-sync를 실행**해, 스킬이 점점 좋아지는 걸 눈으로 확인한다.
+> **핵심**: 5개 소스를 한 번에 붙이지 않는다. 블록마다 소스 하나를 채우고 **그 자리에서 my-account-sync를 실행**해, 스킬이 점점 좋아지는 걸 눈으로 확인한다.
 
 ---
 
@@ -134,9 +136,9 @@ Block 7:  [완성!] 병렬 수집 + 출력 포맷 확정 + 실전 계정 1개로
 - **Block 0 (Recap)**: 퀴즈 없음. Phase A에서 Day 1 회고 + 오늘 예고 → Stop. Phase B에서 숙제 점검(AskUserQuestion)만 하고 Block 1로.
 - **Block 1 (MCP)**: MCP 개념을 반 페이지로 압축. 연결 방법이 여러 가지(Connector/CLI/Plugin)라는 것만 짚는다. 깊게 파지 않는다 — 오늘의 주인공은 개념이 아니라 스킬이다.
 - **Block 2 (스켈레톤)**: Phase A에서 Explore로 프로젝트 탐색 + `templates/my-account-sync.md`를 사용자의 `.claude/skills/my-account-sync/SKILL.md`로 복사해 뼈대 생성 → Stop. Phase B에서 퀴즈.
-- **Block 3~6 (소스 채우기)**: 각 블록은 **STUB 하나 채우기가 실습**이다. Phase A에서 (1) AskUserQuestion으로 도구 사용 여부 확인 → (2) 도구 연결·테스트 → (3) 해당 소스 STUB을 실제 내용으로 교체 → (4) **지금까지 채운 소스만으로 my-account-sync를 중간 실행** → Stop. Phase B에서 퀴즈. 도구/권한이 없으면 **Plan B(붙여넣기 모드)**로 채운다.
-- **Block 7 (완성 + 실전)**: Phase A에서 AskUserQuestion으로 출력 형식 선택 + 실행 흐름/출력 포맷 STUB 완성 + **실제 담당 계정 1개**로 4소스 병렬 수집 실행 → 히스토리 브리핑 확인 → Stop. Phase B에서 종합 퀴즈.
-- **Block 8 (Wrap)**: Phase A에서 오늘 정리 → Stop. Phase B에서 자가진단 3문항 연속 + Day 3 예고로 마무리.
+- **Block 3~7 (소스 채우기)**: 각 블록은 **STUB 하나 채우기가 실습**이다. Phase A에서 (1) AskUserQuestion으로 도구 사용 여부 확인 → (2) 도구 연결·테스트 → (3) 해당 소스 STUB을 실제 내용으로 교체 → (4) **지금까지 채운 소스만으로 my-account-sync를 중간 실행** → Stop. Phase B에서 퀴즈. 도구/권한이 없으면 **Plan B(붙여넣기 모드)**로 채운다. (Block 7 Salesforce는 대부분 SFDC 웹 붙여넣기가 기본 경로다.)
+- **Block 8 (완성 + 실전)**: Phase A에서 AskUserQuestion으로 출력 형식 선택 + 실행 흐름/출력 포맷 STUB 완성 + **실제 담당 계정 1개**로 5소스 병렬 수집 실행 → 히스토리 브리핑 확인 → Stop. Phase B에서 종합 퀴즈.
+- **Block 9 (Wrap)**: Phase A에서 오늘 정리 → Stop. Phase B에서 자가진단 3문항 연속 + Day 3 예고로 마무리.
 
 ### AskUserQuestion 예외 블록
 
@@ -146,8 +148,9 @@ Block 7:  [완성!] 병렬 수집 + 출력 포맷 확정 + 실전 계정 1개로
 | Block 4 | Circleback 사용 여부 확인 |
 | Block 5 | Notion 사용 여부 확인 |
 | Block 6 | Slack 사용 여부 확인 (회사 계정 제한 시 대안 안내) |
-| Block 7 | 출력 형식 선택 (파일 / + Slack / + Notion) |
-| Block 8 | 자가진단 3문항 |
+| Block 7 | Salesforce 수집 방법 확인 (SFDC 웹 붙여넣기 기본 / 연결 / 직접 입력) |
+| Block 8 | 출력 형식 선택 (파일 / + Slack / + Notion) |
+| Block 9 | 자가진단 3문항 |
 
 ---
 
@@ -162,8 +165,9 @@ Block 7:  [완성!] 병렬 수집 + 출력 포맷 확정 + 실전 계정 1개로
 | Block 4 | `references/block4-circleback.md` | 소스② Circleback 미팅노트 |
 | Block 5 | `references/block5-notion.md` | 소스③ Notion 계정 문서 |
 | Block 6 | `references/block6-slack.md` | 소스④ Slack 내부 논의 |
-| Block 7 | `references/block7-finalize.md` | 병렬 수집 + 출력 포맷 + 실전 실행 |
-| Block 8 | `references/block8-wrap.md` | 자가진단 + Day 3 예고 |
+| Block 7 | `references/block7-salesforce.md` | 소스⑤ Salesforce 딜/Opportunity (SFDC 웹 붙여넣기 기본) |
+| Block 8 | `references/block8-finalize.md` | 병렬 수집 + 출력 포맷 + 실전 실행 |
+| Block 9 | `references/block9-wrap.md` | 자가진단 + Day 3 예고 |
 
 > 파일 경로는 이 SKILL.md 기준 상대경로다.
 > 각 reference 파일은 `## EXPLAIN`, `## EXECUTE`, `## QUIZ` 섹션으로 구성된다(블록에 따라 일부 생략).
@@ -174,10 +178,10 @@ Block 7:  [완성!] 병렬 수집 + 출력 포맷 확정 + 실전 계정 1개로
 
 | 파일 | 용도 |
 |------|------|
-| `templates/my-account-sync.md` | 참가자가 자기 프로젝트로 복사하는 스켈레톤 스킬 (Gmail·Circleback·Notion·Slack 4 STUB) |
+| `templates/my-account-sync.md` | 참가자가 자기 프로젝트로 복사하는 스켈레톤 스킬 (Gmail·Circleback·Notion·Slack·Salesforce 5 STUB) |
 
 > 참가자는 이 템플릿을 자기 프로젝트의 `.claude/skills/my-account-sync/SKILL.md`로 복사한 뒤,
-> Block 3~6에서 STUB을 하나씩 채운다.
+> Block 3~7에서 STUB을 하나씩 채운다.
 
 ---
 
@@ -185,7 +189,7 @@ Block 7:  [완성!] 병렬 수집 + 출력 포맷 확정 + 실전 계정 1개로
 
 - 한 번에 한 블록씩 진행한다.
 - "다음", "skip", 블록 번호/이름으로 이동한다.
-- Block 2에서 만든 스켈레톤의 STUB을 Block 3~6에서 하나씩 채운다. 각 블록에서 도구를 연결한 뒤 해당 소스 섹션을 실제 내용으로 교체하고, **그 자리에서 my-account-sync를 실행해 점점 좋아지는 걸 체감**시킨다.
+- Block 2에서 만든 스켈레톤의 STUB을 Block 3~7에서 하나씩 채운다. 각 블록에서 도구를 연결한 뒤 해당 소스 섹션을 실제 내용으로 교체하고, **그 자리에서 my-account-sync를 실행해 점점 좋아지는 걸 체감**시킨다.
 - 사용자 프로젝트의 `.claude/skills/my-account-sync/` 디렉토리에 스킬을 생성한다.
 - 모든 실습은 **참가자의 실제 담당 계정**으로 한다. 단, 고객사·직원 실명은 화면·문서에 남기지 않는다 (도메인·이니셜·"이 계정"으로 지칭).
 - 도구/권한이 없는 참가자는 항상 **Plan B(붙여넣기 모드)**로 따라올 수 있다. 연결이 목적이 아니라 "스킬이 동작하는 걸 체험"하는 게 목적이다.
@@ -197,16 +201,16 @@ Block 7:  [완성!] 병렬 수집 + 출력 포맷 확정 + 실전 계정 1개로
 
 스킬 시작 시 아래 안내와 함께 AskUserQuestion으로 어디서 시작할지 물어본다.
 
-> 오늘은 **여러분의 스킬 하나**를 만들어서 퇴근합니다. 계정명 하나만 넣으면 그 계정과의 과거 히스토리 브리핑이 나오는 `my-account-sync`. 빈 뼈대에 소스 4개를 하나씩 채워가며 완성합니다. 도구 연결은 이 과정에서 자연스럽게 붙습니다.
+> 오늘은 **여러분의 스킬 하나**를 만들어서 퇴근합니다. 계정명 하나만 넣으면 그 계정과의 과거 히스토리 브리핑이 나오는 `my-account-sync`. 빈 뼈대에 소스 5개를 하나씩 채워가며 완성합니다. 도구 연결은 이 과정에서 자연스럽게 붙습니다.
 
 | Block | 주제 | 내용 |
 |-------|------|------|
 | 0 | Recap | Day 1 회고 + 숙제 점검 + 오늘 예고 |
 | 1 | MCP | MCP가 뭔지 반 페이지로 |
 | 2 | 스켈레톤 | my-account-sync 빈 뼈대 만들기 |
-| 3~6 | 소스 채우기 | Gmail → Circleback → Notion → Slack 하나씩 |
-| 7 | 완성 + 실전 | 담당 계정 1개로 히스토리 브리핑 뽑기 |
-| 8 | Wrap | 자가진단 + Day 3 예고 |
+| 3~7 | 소스 채우기 | Gmail → Circleback → Notion → Slack → Salesforce 하나씩 |
+| 8 | 완성 + 실전 | 담당 계정 1개로 히스토리 브리핑 뽑기 |
+| 9 | Wrap | 자가진단 + Day 3 예고 |
 
 ```json
 AskUserQuestion({
