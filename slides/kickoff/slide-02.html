@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · I02 딸깍하면 팀에 짐</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .scenario { display: grid; grid-template-columns: 1fr 1fr; gap: 16pt; flex: 1; margin-top: 22pt; }
+  .col { padding: 22pt 22pt; border-radius: 12pt; display: flex; flex-direction: column; gap: 12pt; justify-content: center; }
+  .col.cream { background: #ebe1d2; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .col.cream .tag { color: #a0917e; }
+  .col.terra .tag { color: #ffd9bf; }
+  .scene { font-size: 12pt; line-height: 1.55; color: #42332a; padding: 12pt 14pt; background: #f5ede2; border-radius: 8pt; }
+  .col.terra .scene { color: #f5e4d4; background: rgba(0,0,0,0.18); }
+  .scene strong { color: #b45a34; font-weight: 700; }
+  .col.terra .scene strong { color: #fff; font-weight: 700; }
+  .stat { font-size: 28pt; font-weight: 700; color: #b45a34; line-height: 1; letter-spacing: -0.01em; }
+  .col.terra .stat { color: #fff; }
+  .stat-sub { font-size: 11pt; font-weight: 500; color: #7d6b5a; margin-top: 4pt; }
+  .col.terra .stat-sub { color: #f5e4d4; }
+  .closing { margin-top: 14pt; padding: 11pt 16pt; background: #ebe1d2; border-left: 3px solid #c56a4a; border-radius: 6pt; font-size: 12pt; line-height: 1.5; color: #2b2520; font-weight: 600; }
+  .closing strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">현장에서 일어나는 일</div>
+  <div class="h-large">"딸깍" 한 번이, <em>팀에는 짐</em>이 된다</div>
+  <div class="rule"></div>
+
+  <div class="scenario">
+    <div class="col cream">
+      <div class="tag">발신자</div>
+      <div class="scene">
+        ChatGPT에 한 번 묻고,<br>
+        답을 <strong>그대로</strong> Slack에 붙여넣음.
+      </div>
+      <div>
+        <div class="stat">30초</div>
+        <div class="stat-sub">"일단 보냈다"</div>
+      </div>
+    </div>
+    <div class="col terra">
+      <div class="tag">받는 사람들</div>
+      <div class="scene">
+        "이거 맞아?"<br>
+        다시 검토 · 사실 확인 · 우리 톤으로 고침.
+      </div>
+      <div>
+        <div class="stat">30분 × N명</div>
+        <div class="stat-sub">팀 전체로는 시간이 늘어난다</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing"><strong>내가 빠른 게, 팀이 빠른 게 아니다.</strong> "AI가 했으니까"는 면죄부가 아니다.</div>
+</body>
+</html>

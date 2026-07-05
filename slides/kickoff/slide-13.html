@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · I13 오늘 밤</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .steps { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12pt; flex: 1; margin-top: 22pt; }
+  .step { padding: 18pt 18pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 10pt; }
+  .step.terra { background: #c56a4a; color: #f7efe4; }
+  .step .num { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; color: #a0917e; text-transform: uppercase; }
+  .step.terra .num { color: #ffd9bf; }
+  .step h3 { font-size: 15pt; font-weight: 700; color: #2b2520; line-height: 1.25; }
+  .step.terra h3 { color: #fff; }
+  .step .desc { font-size: 10.5pt; line-height: 1.45; color: #7d6b5a; }
+  .step.terra .desc { color: #f5e4d4; }
+  .step .code { font-family: 'SF Mono', 'Menlo', monospace; font-size: 9.5pt; color: #f2cdb4; background: #2b2520; border-radius: 6pt; padding: 8pt 10pt; line-height: 1.4; word-break: break-all; }
+  .closing { margin-top: 14pt; padding: 11pt 16pt; background: #ebe1d2; border-left: 3px solid #c56a4a; border-radius: 6pt; font-size: 12pt; line-height: 1.5; color: #2b2520; font-weight: 600; }
+  .closing strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">Day 1 전에</div>
+  <div class="h-large">오늘 밤, <em>세 가지만</em></div>
+  <div class="rule"></div>
+
+  <div class="steps">
+    <div class="step terra">
+      <div class="num">01 · 설치</div>
+      <h3>Claude Code 설치</h3>
+      <div class="code">curl -fsSL https://claude.ai/install.sh | bash</div>
+      <div class="desc">터미널에 claude 입력 → 인사 나오면 성공.</div>
+    </div>
+    <div class="step">
+      <div class="num">02 · 연결</div>
+      <h3>도구 1개 연결</h3>
+      <div class="desc">Circleback · Notion · Slack 중 자주 쓰는 것 하나만. 나머지는 Day 2에서 함께 연결한다.</div>
+    </div>
+    <div class="step">
+      <div class="num">03 · 받기</div>
+      <h3>캠프 레포 clone</h3>
+      <div class="code">git clone &lt;repo-url&gt; &amp;&amp; cd ai-camp-sales &amp;&amp; claude</div>
+      <div class="desc">Claude Code 안에서 /day1 로 시작.</div>
+    </div>
+  </div>
+
+  <div class="closing">막히는 건 정상이다. <strong>90%는 재로그인 또는 재시작.</strong> Day 1에 운영진이 5분이면 잡아준다.</div>
+</body>
+</html>

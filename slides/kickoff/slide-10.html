@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · I10 왜 이 캠프</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .stage { display: grid; grid-template-columns: 1fr 1fr; gap: 16pt; flex: 1; margin-top: 22pt; }
+  .card { padding: 22pt 22pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 14pt; justify-content: center; }
+  .card.terra { background: #c56a4a; color: #f7efe4; }
+  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; color: #a0917e; text-transform: uppercase; }
+  .card.terra .tag { color: #ffd9bf; }
+  .card h3 { font-size: 22pt; font-weight: 700; color: #2b2520; line-height: 1.2; }
+  .card.terra h3 { color: #fff; }
+  .card .sub { font-size: 13pt; line-height: 1.45; color: #42332a; }
+  .card.terra .sub { color: #f5e4d4; }
+  .card .sub strong { color: #2b2520; font-weight: 700; }
+  .card.terra .sub strong { color: #fff; font-weight: 700; }
+  .mission { padding: 11pt 14pt; background: rgba(255,255,255,0.18); border-radius: 8pt; font-size: 11pt; color: #fff; line-height: 1.45; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">왜 이 자리</div>
+  <div class="h-large">지식 노동자로 <em>살아남기</em></div>
+  <div class="rule"></div>
+
+  <div class="stage">
+    <div class="card">
+      <div class="tag">위기</div>
+      <h3>매뉴얼 있는 일은 가장 먼저 위협받는다</h3>
+      <div class="sub">앱처럼 AI를 쓰는 데서 멈추면 — <strong>"AI에게 일감 잘 던지는 사람"</strong>이 되어 끝난다.</div>
+    </div>
+
+    <div class="card terra">
+      <div class="tag">방향</div>
+      <h3>AI Native = OS 빌더</h3>
+      <div class="sub">단축키 빨리 누르는 사람이 아니다.<br><strong>내 환경을 그 위에 짓는 사람</strong>이다.</div>
+      <div class="mission">AB180 한 사람 한 사람이 자기 OS를 가질 수 있도록.</div>
+    </div>
+  </div>
+</body>
+</html>

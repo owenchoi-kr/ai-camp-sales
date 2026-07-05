@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · I08 Before/After</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16pt; flex: 1; margin-top: 22pt; }
+  .col { padding: 22pt 22pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 14pt; justify-content: center; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; color: #a0917e; text-transform: uppercase; }
+  .col.terra .tag { color: #ffd9bf; }
+  .col h3 { font-size: 17pt; font-weight: 700; color: #2b2520; line-height: 1.25; }
+  .col.terra h3 { color: #fff; }
+  .stat { font-size: 26pt; font-weight: 700; color: #b45a34; line-height: 1.1; letter-spacing: -0.01em; }
+  .col.terra .stat { color: #fff; }
+  .stat .small { font-size: 13pt; color: #7d6b5a; font-weight: 500; display: block; margin-top: 6pt; }
+  .col.terra .stat .small { color: #f5e4d4; }
+  .closing { margin-top: 14pt; padding: 11pt 16pt; background: #ebe1d2; border-left: 3px solid #c56a4a; border-radius: 6pt; font-size: 12pt; line-height: 1.5; color: #2b2520; font-weight: 600; }
+  .closing strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">제 1년의 차이</div>
+  <div class="h-large">앱 사용자에서 → <em>OS 빌더</em>로</div>
+  <div class="rule"></div>
+
+  <div class="compare">
+    <div class="col">
+      <div class="tag">Before · 1년 전</div>
+      <h3>앱 사용자</h3>
+      <div class="stat">매번 처음<span class="small">맥락 붙여넣기 · 직접 다 고침</span></div>
+    </div>
+    <div class="col terra">
+      <div class="tag">After · 지금</div>
+      <h3>OS 환경 운영</h3>
+      <div class="stat">4개 에이전트 동시<span class="small">맥락 200줄 자동 로드 · 같은 지시 ✗</span></div>
+    </div>
+  </div>
+
+  <div class="closing"><strong>도구가 아니라 — 그 위에 깐 환경이 일을 한다.</strong></div>
+</body>
+</html>

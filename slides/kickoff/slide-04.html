@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Day 1 · I04 AI를 OS로 본다</title>
+<link rel="stylesheet" href="./assets/warm-neutral.css">
+<style>
+  body { display: flex; flex-direction: column; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16pt; flex: 1; margin-top: 22pt; }
+  .col { padding: 22pt 22pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 14pt; justify-content: center; }
+  .col.terra { background: #c56a4a; color: #f7efe4; }
+  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; color: #a0917e; text-transform: uppercase; }
+  .col.terra .tag { color: #ffd9bf; }
+  .col h3 { font-size: 22pt; font-weight: 700; color: #2b2520; line-height: 1.2; }
+  .col.terra h3 { color: #fff; }
+  .col .desc { font-size: 12pt; color: #42332a; line-height: 1.5; }
+  .col.terra .desc { color: #f5e4d4; }
+  .col .desc strong { color: #2b2520; font-weight: 700; }
+  .col.terra .desc strong { color: #fff; font-weight: 700; }
+  .examples { display: flex; flex-wrap: wrap; gap: 5pt; }
+  .examples .ex { font-size: 11pt; padding: 5pt 10pt; background: rgba(255,255,255,0.55); border-radius: 999pt; color: #42332a; font-weight: 600; }
+  .col.terra .examples .ex { background: rgba(255,255,255,0.18); color: #fff; }
+  .closing { margin-top: 14pt; padding: 11pt 16pt; background: #ebe1d2; border-left: 3px solid #c56a4a; border-radius: 6pt; font-size: 12pt; line-height: 1.5; color: #2b2520; font-weight: 600; }
+  .closing strong { color: #b45a34; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">오늘의 비유</div>
+  <div class="h-large">AI를 <em>OS</em>로 본다</div>
+  <div class="rule"></div>
+
+  <div class="compare">
+    <div class="col">
+      <div class="tag">앱처럼 쓰는 사람</div>
+      <h3>한 번 켰다 끈다</h3>
+      <div class="desc">계산기 앱처럼 ChatGPT를 켜고, 묻고, 닫는다. <strong>매번이 처음.</strong></div>
+      <div class="examples">
+        <div class="ex">한 번 묻기</div>
+        <div class="ex">매번 맥락 다시</div>
+        <div class="ex">닫으면 끝</div>
+      </div>
+    </div>
+
+    <div class="col terra">
+      <div class="tag">OS로 보는 사람</div>
+      <h3>그 위에 내 환경을 짓는다</h3>
+      <div class="desc">컴퓨터 OS에 폴더 깔고, 자동화 깔고, 단축키 박듯이 — <strong>AI 위에도 내 환경을 깐다.</strong></div>
+      <div class="examples">
+        <div class="ex">맥락 파일</div>
+        <div class="ex">규칙</div>
+        <div class="ex">도구 연결</div>
+        <div class="ex">자동화</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing"><strong>한 번 깔아둔 환경 위에서 AI는 매번 그걸 안고 시작한다.</strong></div>
+</body>
+</html>
