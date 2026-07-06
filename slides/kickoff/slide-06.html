@@ -2,47 +2,38 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 1 · I06 Stage 1</title>
+<title>Kickoff · I06 피드백 루프</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .stage { display: grid; grid-template-columns: 1fr 1fr; gap: 16pt; flex: 1; margin-top: 22pt; }
-  .card { padding: 22pt 22pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 14pt; justify-content: center; }
-  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; color: #a0917e; text-transform: uppercase; }
-  .card h3 { font-size: 18pt; font-weight: 700; color: #2b2520; line-height: 1.25; }
-  .lead-line { font-size: 13pt; color: #42332a; line-height: 1.4; }
-  .lead-line strong { color: #b45a34; font-weight: 700; }
-  .loop { display: flex; gap: 6pt; align-items: center; flex-wrap: wrap; }
-  .loop .step { font-size: 11pt; padding: 7pt 12pt; background: #fff; border-radius: 8pt; color: #2b2520; font-weight: 700; }
-  .loop .arrow { font-size: 14pt; color: #b45a34; font-weight: 700; }
-  .quote { font-size: 9pt; color: #a0917e; font-style: italic; }
+  .lead { font-size: 13pt; line-height: 1.55; color: #7d6b5a; margin-top: 14pt; max-width: 560pt; }
+  .boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 14pt; margin-top: auto; }
+  .box { border-radius: 12pt; padding: 16pt 18pt; display: flex; flex-direction: column; gap: 8pt; }
+  .box.cream { background: #ebe1d2; }
+  .box.dark { background: #2b2520; }
+  .box .lbl { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .box.cream .lbl { color: #b45a34; }
+  .box.dark .lbl { color: #ffd9bf; }
+  .box.cream .txt { font-size: 11.5pt; line-height: 1.5; color: #2b2520; }
+  .box.dark .txt { font-size: 11.5pt; line-height: 1.5; color: #f5e4d4; }
+  .box.dark .txt em { font-style: normal; color: #f2a97e; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">Stage 1 · 파워 유저</div>
-  <div class="h-large">한 사이클이 <em>돈다</em></div>
+  <div class="eyebrow">AI랑 워크플로우 짜기 · 3 / 3</div>
+  <div class="h-large">회고를 자동화해 <em>복리로 쌓는다</em></div>
   <div class="rule"></div>
 
-  <div class="stage">
-    <div class="card">
-      <div class="tag">비유 · 단축키·매크로 같이 짜는 사람</div>
-      <h3>실행은 AI · 검토는 나</h3>
-      <div class="lead-line">초안은 AI가 95%,<br><strong>마지막 5%는 내가 채운다.</strong></div>
-    </div>
+  <div class="lead">매 작업 후 복기하는 구조를 만들면 실수·패턴·배움이 누적돼 판단이 정교해진다. 회고 → 학습 → 개선의 사이클이 돌수록 다음 일이 쉬워진다.</div>
 
-    <div class="card">
-      <div class="tag">한 사이클</div>
-      <h3>계획 → 실행 → 검토 → 다음</h3>
-      <div class="loop">
-        <div class="step">계획</div>
-        <div class="arrow">→</div>
-        <div class="step">실행</div>
-        <div class="arrow">→</div>
-        <div class="step">검토</div>
-        <div class="arrow">→</div>
-        <div class="step">다음</div>
-      </div>
-      <div class="lead-line">검토 5%가 빠지면 다시 Stage 0.</div>
+  <div class="boxes">
+    <div class="box cream">
+      <div class="lbl">예시</div>
+      <div class="txt">잘된 프롬프트는 규칙에 박고, 틀린 패턴은 금지어에 넣는다. 다음 주엔 고친 버전으로 시작한다.</div>
+    </div>
+    <div class="box dark">
+      <div class="lbl">이 캠프에서</div>
+      <div class="txt"><em>Day 4</em> — 의사결정 로그 + Build → Use → Notice → Fix. 매주 5분 회고를 스킬에 반영한다</div>
     </div>
   </div>
 </body>

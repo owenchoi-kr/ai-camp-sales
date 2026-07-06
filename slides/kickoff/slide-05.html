@@ -2,42 +2,38 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Day 1 · I05 Stage 0</title>
+<title>Kickoff · I05 Unknown Unknowns</title>
 <link rel="stylesheet" href="./assets/warm-neutral.css">
 <style>
   body { display: flex; flex-direction: column; }
-  .stage { display: grid; grid-template-columns: 1fr 1fr; gap: 16pt; flex: 1; margin-top: 22pt; }
-  .card { padding: 22pt 22pt; border-radius: 12pt; background: #ebe1d2; display: flex; flex-direction: column; gap: 12pt; justify-content: center; }
-  .tag { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; color: #a0917e; text-transform: uppercase; }
-  .card h3 { font-size: 18pt; font-weight: 700; color: #2b2520; line-height: 1.25; }
-  .lead-line { font-size: 13pt; color: #42332a; line-height: 1.4; }
-  .lead-line strong { color: #b45a34; font-weight: 700; }
-  .pill { font-size: 11pt; padding: 7pt 12pt; background: #f5ede2; border: 1px dashed #d4c4ac; border-radius: 999pt; color: #42332a; display: inline-block; align-self: flex-start; font-weight: 600; }
-  .example { padding: 12pt 14pt; background: #f5ede2; border-radius: 8pt; font-size: 11pt; line-height: 1.5; color: #42332a; }
-  .example strong { color: #b45a34; font-weight: 700; }
+  .lead { font-size: 13pt; line-height: 1.55; color: #7d6b5a; margin-top: 14pt; max-width: 560pt; }
+  .boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 14pt; margin-top: auto; }
+  .box { border-radius: 12pt; padding: 16pt 18pt; display: flex; flex-direction: column; gap: 8pt; }
+  .box.cream { background: #ebe1d2; }
+  .box.dark { background: #2b2520; }
+  .box .lbl { font-size: 9pt; letter-spacing: 0.22em; font-weight: 700; text-transform: uppercase; }
+  .box.cream .lbl { color: #b45a34; }
+  .box.dark .lbl { color: #ffd9bf; }
+  .box.cream .txt { font-size: 11.5pt; line-height: 1.5; color: #2b2520; }
+  .box.dark .txt { font-size: 11.5pt; line-height: 1.5; color: #f5e4d4; }
+  .box.dark .txt em { font-style: normal; color: #f2a97e; font-weight: 700; }
 </style>
 </head>
 <body>
-  <div class="eyebrow">Stage 0 · 앱 사용자</div>
-  <div class="h-large">묻고, <em>그대로</em> 쓴다</div>
+  <div class="eyebrow">AI랑 워크플로우 짜기 · 2 / 3</div>
+  <div class="h-large">AI가 되물어 <em>내 맹점을 드러낸다</em></div>
   <div class="rule"></div>
 
-  <div class="stage">
-    <div class="card">
-      <div class="tag">비유 · 계산기 앱</div>
-      <h3>켜고, 묻고, 닫는다</h3>
-      <div class="lead-line">매번 맥락을 다시 설명한다.<br><strong>복리가 없다.</strong></div>
-      <div class="pill">⚠ 검토 빠지면 받는 사람 책상으로</div>
-    </div>
+  <div class="lead">혼자선 구조적으로 못 잡는 영역을, AI가 "이건 확인했어요?"라는 질문으로 드러낸다. 내가 모르는지조차 몰랐던 조건이 눈앞에 보인다.</div>
 
-    <div class="card">
-      <div class="tag">예시 · "리캡 메일 써줘"</div>
-      <h3>일반 템플릿이 나온다</h3>
-      <div class="example">
-        톤 ✗ · 금지어 ✗ · 고객 맥락 ✗<br><br>
-        <strong>→ 직접 다 고친다.</strong><br>
-        <strong>→ 다음 메일 때 또 처음부터.</strong>
-      </div>
+  <div class="boxes">
+    <div class="box cream">
+      <div class="lbl">예시</div>
+      <div class="txt">리뷰 분석 도구를 만들 때 AI가 "경쟁사 비교 없이 의미 있나요?"라고 묻자, 혼자였으면 넘어갔을 게 드러났다.</div>
+    </div>
+    <div class="box dark">
+      <div class="lbl">이 캠프에서</div>
+      <div class="txt"><em>Day 3</em> — Clarify. 바로 시키지 말고, AI가 수신자·목적·톤을 먼저 되묻게 한다</div>
     </div>
   </div>
 </body>
