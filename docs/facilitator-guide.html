@@ -824,19 +824,25 @@ Day 1의 실제 내용은 <code>/day1</code> 스킬이 참가자에게 진행한
 <tr>
 <td><strong>실습 1</strong></td>
 <td><strong>Verify — 까다로운 프로스펙트 검증</strong> ⭐</td>
-<td><strong>25분</strong></td>
+<td><strong>22분</strong></td>
 <td>스킬</td>
 </tr>
 <tr>
 <td>실습 2</td>
 <td>Routine — 주간 루틴 조립</td>
-<td>12분</td>
+<td>10분</td>
 <td>스킬</td>
 </tr>
 <tr>
-<td><strong>실습 3</strong></td>
+<td>실습 3</td>
+<td>Graduate — 내 것으로 가져가기(전역 승격)</td>
+<td>10분</td>
+<td>스킬</td>
+</tr>
+<tr>
+<td><strong>실습 4</strong></td>
 <td><strong>Scoping — 2주차 프로젝트 (산출물)</strong></td>
-<td><strong>20분</strong></td>
+<td><strong>15분</strong></td>
 <td>스킬</td>
 </tr>
 <tr>
@@ -847,11 +853,12 @@ Day 1의 실제 내용은 <code>/day1</code> 스킬이 참가자에게 진행한
 </tr>
 </tbody>
 </table>
-<p>슬라이드 강의 파트엔 STOP이 없다(강의). 실습 파트만 Phase A/B 2턴.</p>
+<p>슬라이드 강의 파트엔 STOP이 없다(강의). 실습 파트만 Phase A/B 2턴.
+<strong>Graduate가 Scoping 앞에 오는 이유</strong>: 검증된 스킬을 전역으로 먼저 옮겨야, 2주차 프로젝트를 캠프 폴더가 아닌 <strong>참가자의 실제 업무 폴더</strong>에서 진행할 수 있다.</p>
 <hr />
 <h2>앵커 — 커버 + 지도 (5분)</h2>
 <ul>
-<li><strong>🎤 강사</strong>: slide-01 "검증하고 조립한다 — 만든 걸 믿을 수 있게" 선언. 오늘의 문장: <strong>"만든 사람은 자기 결과를 공정히 못 본다."</strong> slide-02로 오늘이 <strong>강의 2개(팩트체크·로그) + 실습 2개(검증·조립/프로젝트)</strong> 구조임을 보여주고 "오늘 손에 남는 것 = 2주차 프로젝트 계획 1장" 못 박기.</li>
+<li><strong>🎤 강사</strong>: slide-01 "검증하고 조립한다 — 만든 걸 믿을 수 있게" 선언. 오늘의 문장: <strong>"만든 사람은 자기 결과를 공정히 못 본다."</strong> slide-02로 오늘이 <strong>강의 2개(팩트체크·로그) + 실습(검증·조립·가져가기·프로젝트)</strong> 구조임을 보여주고 "오늘 손에 남는 것 = 2주차 프로젝트 계획 1장" 못 박기.</li>
 <li><strong>⌨️ 참가자</strong>: 어제까지 산출물 3개 확인 — CLAUDE.md · my-account-sync · 커스터마이징한 스킬 + 아쉬운 점 메모</li>
 <li><strong>⚠️ 막히는 곳</strong>: 결석 등으로 산출물 없음 → "운영진 예시나 즉석 더미로 흐름만 체험"</li>
 <li><strong>🖥 슬라이드</strong>: slide-01, slide-02</li>
@@ -899,7 +906,16 @@ Day 1의 실제 내용은 <code>/day1</code> 스킬이 참가자에게 진행한
 <li><strong>⚠️ 막히는 곳</strong>: <strong>트리거(요일·시각) 누락</strong> → "이 루틴 주로 언제 도나요?" 한 번 묻기(트리거 없으면 습관이 안 됨). 참가자 루틴 과하게 교정 금지(정답 루틴 없음). Phase B에서 CLAUDE.md 끝에 "## 내 주간 루틴" 섹션 추가</li>
 <li><strong>🖥 슬라이드</strong>: 없음(실습). 강의 C의 "잘된 걸 CLAUDE.md에 박는다"의 실천</li>
 </ul>
-<h2>실습 3 — Scoping: 2주차 프로젝트 (20분 · 산출물)</h2>
+<h2>실습 3 — Graduate: 내 것으로 가져가기 (10분 · 캠프의 마침표)</h2>
+<ul>
+<li><strong>🎤 강사 (Phase A)</strong>: "지금까지 만든 CLAUDE.md·스킬은 이 캠프 폴더 안에서만 돈다. 2주차엔 네 <strong>실제 업무</strong>에 적용해야 하는데, 그러려면 전역(<code>~/.claude/</code>)으로 옮겨야 어느 폴더에서든 된다." 프레이밍: <strong>"캠프 폴더 = 연습장. 검증 끝난 것만 골라 실제 환경으로 승격한다."</strong> Day 4 검증 원리(검증된 것만 믿는다)가 여기서 "검증된 것만 가져간다"로 이어진다.</li>
+<li><strong>⌨️ 참가자</strong>: 가져갈 스킬 고르기 → (Claude가 대신) 전역 <code>~/.claude/skills/</code>로 복사 + CLAUDE.md 안전 병합 → 다른 폴더에서 작동 확인</li>
+<li><strong>✋ STOP</strong>: "가져갈 것을 훑어보라" 후 멈춤</li>
+<li><strong>✅ 체크</strong>: "이제 어느 폴더에서 /call-prep이 되나?"(정답: 어디서든) · "2주차 프로젝트는 어디서 하나?"(정답: 내 실제 업무 폴더)</li>
+<li><strong>⚠️ 막히는 곳 (가장 중요)</strong>: <strong>전역 <code>~/.claude/CLAUDE.md</code>를 절대 덮어쓰지 않는다.</strong> 이미 있으면 "그 아래에 이어붙일까요?" 물어본 뒤 append만, 없으면 복사. 비개발자가 개인 설정을 날리면 복구가 어렵다 — Claude가 대신 처리하되 이 분기를 반드시 지킨다.</li>
+<li><strong>🖥 슬라이드</strong>: 없음(실습). slide-02 지도 카드 ④ "조립·가져가기·프로젝트"의 가운데</li>
+</ul>
+<h2>실습 4 — Scoping: 2주차 프로젝트 (15분 · 산출물)</h2>
 <ul>
 <li><strong>🎤 강사 (Phase A)</strong>: <code>📖 .../skills</code>. <strong>인터뷰 블록.</strong> 2주차 = 내 실제 파이프라인 1개에 적용, 기준은 "매주 반복되는 시간 낭비를 없앨 것". <code>docs/project-menu.md</code>의 메뉴 6개를 <strong>요약 없이 그대로</strong> 제시. 없으면 자기 고통점으로도 OK. 인터뷰 4가지 예고: 없앨 반복 작업 / 완성 기준 / 범위 밖 / 쇼케이스 한 장.</li>
 <li><strong>⌨️ 참가자</strong>: 메뉴 택1 or "내 고통점으로" → "시작" → 한 주제씩 인터뷰 → my-project.md 확정</li>

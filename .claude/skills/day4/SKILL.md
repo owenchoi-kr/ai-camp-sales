@@ -1,9 +1,9 @@
 ---
 name: day4
-description: AI Camp Sales Day 4 — 검증(까다로운 프로스펙트) + 주간 루틴 조립 + 2주차 프로젝트 스코핑. 4일간 만든 걸 "믿을 수 있게" 만들고, 매주 돌아가는 루틴으로 엮고, 2주차 프로젝트를 정한다. 라이브 수업 진행용 + 결석자 self-paced용. "day4", "데이포", "4일차", "Day 4" 요청에 사용.
+description: AI Camp Sales Day 4 — 검증(까다로운 프로스펙트) + 주간 루틴 조립 + 전역 승격(가져가기) + 2주차 프로젝트 스코핑. 4일간 만든 걸 "믿을 수 있게" 만들고, 매주 돌아가는 루틴으로 엮고, 검증 끝난 것만 전역으로 가져가고, 2주차 프로젝트를 정한다. 라이브 수업 진행용 + 결석자 self-paced용. "day4", "데이포", "4일차", "Day 4" 요청에 사용.
 ---
 
-# Day 4: 검증 + 조립 + 프로젝트 스코핑
+# Day 4: 검증 + 조립 + 가져가기 + 프로젝트 스코핑
 
 이 스킬이 호출되면 아래 **STOP PROTOCOL**을 반드시 따른다.
 
@@ -84,8 +84,9 @@ Phase A 마지막에는 반드시 아래 문구를 출력하고 Stop한다:
 - **Block 0 (Recap)**: 퀴즈 없음. Phase A에서 3일 리캡 + 오늘 안내 → Stop. Phase B에서 완료 확인만.
 - **Block 1 (Verify)**: ⭐ **오늘의 핵심 블록**. Phase A에서 Generator≠Evaluator 원리 + "까다로운 프로스펙트" Subagent 개념 설명 + 채점 실행 안내 → Stop. Phase B에서 **참가자가 채점을 돌리면 Subagent(Task 도구)를 띄워 페르소나로 채점**하고, 피드백 → 1곳 수정 → 재채점까지 진행한다. (이 블록은 Phase B에서 도구를 적극 사용한다.)
 - **Block 2 (Routine)**: Phase A에서 주간 루틴 조립 개념 + 예시 루틴 → "내 루틴 3줄로 적어보라" 안내 → Stop. Phase B에서 참가자 루틴 3줄을 받아 **CLAUDE.md에 "내 주간 루틴" 섹션을 추가(Edit)**하고 reflection.
-- **Block 3 (Scoping)**: **인터뷰 블록**. Phase A에서 2주차 프로젝트 메뉴(docs/project-menu.md) 소개 + "택1 하거나 내 고통점으로" 안내 → "준비되면 '시작'" → Stop. Phase B에서 인터뷰로 스코핑 1장을 채우고 **`my-project.md` 파일로 저장(Write)**한다.
-- **Block 4 (Wrap)**: Phase A에서 1주차 수료 정리 + 4일 산출물 체크리스트 → Stop. Phase B에서 자가진단 퀴즈 3문항 연속 → 2주차 운영 안내로 마무리.
+- **Block 3 (Graduate)**: Phase A에서 "캠프 폴더 = 연습장, 전역 = 실제 환경" 원리 + 왜 전역으로 옮겨야 하는지 설명 → "가져갈 것 훑어보라" 안내 → Stop. Phase B에서 **Claude가 대신** 전역으로 스킬 복사(`cp -r`) + CLAUDE.md 안전 병합을 처리한다. ⚠️ **전역 `~/.claude/CLAUDE.md`가 있으면 절대 덮어쓰지 않고 물어본 뒤 append만** 한다(가장 중요한 안전장치). 참가자는 터미널 초보 전제.
+- **Block 4 (Scoping)**: **인터뷰 블록**. Phase A에서 2주차 프로젝트 메뉴(docs/project-menu.md) 소개 + "택1 하거나 내 고통점으로" 안내 → "준비되면 '시작'" → Stop. Phase B에서 인터뷰로 스코핑 1장을 채우고 **`my-project.md` 파일로 저장(Write)**한다.
+- **Block 5 (Wrap)**: Phase A에서 1주차 수료 정리 + 4일 산출물 체크리스트 → Stop. Phase B에서 자가진단 퀴즈 3문항 연속 → 2주차 운영 안내로 마무리.
 
 ---
 
@@ -96,8 +97,9 @@ Phase A 마지막에는 반드시 아래 문구를 출력하고 Stop한다:
 | Block 0 | `references/block0-recap.md` | 3일 리캡 + 오늘 안내 |
 | Block 1 | `references/block1-verify.md` | ⭐ 까다로운 프로스펙트 검증 (Generator≠Evaluator) |
 | Block 2 | `references/block2-routine.md` | 내 월요일 아침 루틴 조립 |
-| Block 3 | `references/block3-scoping.md` | 2주차 프로젝트 스코핑 (오늘 산출물) |
-| Block 4 | `references/block4-wrap.md` | 1주차 수료 + 자가진단 + 2주차 운영 안내 |
+| Block 3 | `references/block3-graduate.md` | 내 것으로 가져가기 — 검증 끝난 것만 전역 승격 |
+| Block 4 | `references/block4-scoping.md` | 2주차 프로젝트 스코핑 (오늘 산출물) |
+| Block 5 | `references/block5-wrap.md` | 1주차 수료 + 자가진단 + 2주차 운영 안내 |
 | (참조) | `references/persona-tough-prospect.md` | 까다로운 프로스펙트 3종 페르소나 채점 프롬프트 전문 |
 
 > 파일 경로는 이 SKILL.md 기준 상대경로다.
@@ -109,9 +111,10 @@ Phase A 마지막에는 반드시 아래 문구를 출력하고 Stop한다:
 
 - 한 번에 한 블록씩 진행한다.
 - "다음", "skip", 블록 번호/이름으로 이동한다.
-- 순서: Recap(0) → Verify(1) → Routine(2) → Scoping(3) → Wrap(4).
-- 오늘의 목적지는 **Block 3에서 `my-project.md`(2주차 프로젝트 스코핑 1장)를 실제로 저장하는 것**이다. Block 1의 검증 경험이 "무엇을 만들지"를 고르는 감각을 준다.
-- Block 1·2·3는 참가자가 앞 3일에 만든 산출물(CLAUDE.md · my-account-sync · 커스터마이징한 템플릿 스킬)을 전제로 한다. 산출물이 없으면(결석 등) 운영진 예시나 즉석 더미로 대체해 흐름만 체험하게 한다.
+- 순서: Recap(0) → Verify(1) → Routine(2) → Graduate(3) → Scoping(4) → Wrap(5).
+- 오늘의 목적지는 **Block 4에서 `my-project.md`(2주차 프로젝트 스코핑 1장)를 실제로 저장하는 것**이다. Block 1의 검증 경험이 "무엇을 만들지"를 고르는 감각을 준다.
+- Block 3(Graduate)에서 검증 끝난 스킬·CLAUDE.md를 전역(`~/.claude/`)으로 승격해, 2주차 프로젝트를 **내 실제 업무 폴더에서** 진행할 수 있게 만든다. 캠프 폴더는 연습장이다.
+- Block 1·2·3·4는 참가자가 앞 3일에 만든 산출물(CLAUDE.md · my-account-sync · 커스터마이징한 템플릿 스킬)을 전제로 한다. 산출물이 없으면(결석 등) 운영진 예시나 즉석 더미로 대체해 흐름만 체험하게 한다.
 
 ---
 
@@ -119,15 +122,16 @@ Phase A 마지막에는 반드시 아래 문구를 출력하고 Stop한다:
 
 스킬 시작 시 아래 안내와 함께 AskUserQuestion으로 어디서 시작할지 물어본다.
 
-> 오늘은 3가지를 합니다. ① 4일간 만든 걸 **다른 눈으로 검증**하고(까다로운 프로스펙트), ② 흩어진 스킬을 **매주 돌아가는 루틴**으로 엮고, ③ 2주차에 만들 **내 프로젝트를 스코핑**합니다. 오늘의 산출물은 프로젝트 스코핑 1장입니다.
+> 오늘은 4가지를 합니다. ① 4일간 만든 걸 **다른 눈으로 검증**하고(까다로운 프로스펙트), ② 흩어진 스킬을 **매주 돌아가는 루틴**으로 엮고, ③ 검증 끝난 것만 **전역으로 가져가**(어느 폴더에서든 쓰게), ④ 2주차에 만들 **내 프로젝트를 스코핑**합니다. 오늘의 산출물은 프로젝트 스코핑 1장입니다.
 
 | Block | 주제 | 내용 |
 |-------|------|------|
 | 0 | Recap | 3일 리캡 — 프로필 → 도구 → 스킬 |
 | 1 | Verify ⭐ | 까다로운 프로스펙트가 내 결과물을 채점 |
 | 2 | Routine | 내 월요일 아침 30분 루틴 조립 |
-| 3 | Scoping | 오늘의 산출물 — 2주차 프로젝트 스코핑 1장 |
-| 4 | Wrap | 1주차 수료 + 자가진단 + 2주차 운영 안내 |
+| 3 | Graduate | 검증 끝난 스킬·CLAUDE.md를 전역으로 승격 |
+| 4 | Scoping | 오늘의 산출물 — 2주차 프로젝트 스코핑 1장 |
+| 5 | Wrap | 1주차 수료 + 자가진단 + 2주차 운영 안내 |
 
 ```json
 AskUserQuestion({
@@ -137,7 +141,7 @@ AskUserQuestion({
     "options": [
       {"label": "처음부터 (Block 0)", "description": "리캡부터 순서대로 — 라이브 수업/결석자 권장"},
       {"label": "검증부터 (Block 1)", "description": "리캡 아는 사람 — 오늘의 핵심(까다로운 프로스펙트)부터"},
-      {"label": "바로 스코핑 (Block 3)", "description": "앞 내용 아는 사람 — 오늘 산출물만 빠르게"},
+      {"label": "바로 스코핑 (Block 4)", "description": "앞 내용 아는 사람 — 오늘 산출물만 빠르게"},
       {"label": "전체 훑기", "description": "각 블록 한 줄 요약만 먼저 보기"}
     ],
     "multiSelect": false
@@ -146,4 +150,4 @@ AskUserQuestion({
 ```
 
 > 시작 블록 선택 후 → 해당 블록의 Phase A부터 진행한다.
-> "바로 스코핑"을 골라도, Block 3 도입에서 Block 1의 검증 원리(Generator≠Evaluator)를 한 문단으로 압축해 먼저 짚어준 뒤 진행한다.
+> "바로 스코핑"을 골라도, Block 4 도입에서 Block 1의 검증 원리(Generator≠Evaluator)를 한 문단으로 압축해 먼저 짚어준 뒤 진행한다.
