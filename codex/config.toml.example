@@ -1,0 +1,41 @@
+# ~/.codex/config.toml 에 병합하세요 (MCP 서버 설정)
+# ---------------------------------------------------------------
+# 이 4개 스킬은 MCP 없이도 "모드 1/2"로 동작합니다. (붙여넣기 fallback)
+# 아래 서버를 붙이면 "모드 3"으로 올라가 자동 조회·draft 저장이 됩니다.
+# 서버/도구 이름은 사용하는 MCP 구현마다 다릅니다 — 각 서버 README 확인.
+# 자격증명은 여기 하드코딩하지 말고 환경변수로 주입하세요.
+
+# --- Gmail: 아웃리치/팔로업 메일 draft 저장 (draft-outreach, meeting-followup) ---
+[mcp_servers.gmail]
+command = "npx"
+args = ["-y", "@gongrzhe/server-gmail-autoauth-mcp"]
+# 최초 1회 OAuth 인증 필요. draft 생성 도구만 있으면 됨(자동 발송 X).
+startup_timeout_sec = 20
+
+# --- Notion: 계정 히스토리 / 전환 사례 페이지 조회 (call-prep, battlecard, meeting-followup) ---
+[mcp_servers.notion]
+command = "npx"
+args = ["-y", "@notionhq/notion-mcp-server"]
+env = { NOTION_TOKEN = "${NOTION_TOKEN}" }
+startup_timeout_sec = 20
+
+# --- Slack: 과거 이관 논의 / 계정 논의 검색 (battlecard, call-prep) ---
+[mcp_servers.slack]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-slack"]
+env = { SLACK_BOT_TOKEN = "${SLACK_BOT_TOKEN}", SLACK_TEAM_ID = "${SLACK_TEAM_ID}" }
+startup_timeout_sec = 20
+
+# --- Circleback: 미팅노트 자동 조회 (meeting-followup) ---
+# 참고: Circleback 공개 MCP 서버는 (2026-07 기준) 표준화돼 있지 않습니다.
+# 없으면 meeting-followup 은 "미팅노트를 붙여넣어 주세요" fallback 으로 동작합니다.
+# 사내 프록시/커스텀 MCP가 있으면 아래 형태로 등록:
+# [mcp_servers.circleback]
+# command = "..."
+# args = ["..."]
+
+# --- (선택) Salesforce: CRM 스테이지 확인 ---
+# meeting-followup 의 "CRM 업데이트 제안"은 기본적으로 제안 텍스트만 생성합니다.
+# 실제 조회가 필요하면 Salesforce MCP를 붙이세요. CRM 쓰기는 사람이 확인 후.
+# [mcp_servers.salesforce]
+# command = "..."
