@@ -1,0 +1,202 @@
+<title>MGS2026 · Braze 업종별 맞춤 제안 모음</title>
+<style>
+  :root{
+    --ground:#FBFAF7;--surface:#FFFFFF;--surface-2:#F2F0EA;--ink:#171425;--ink-soft:#494456;--muted:#7C7688;
+    --line:rgba(23,20,37,0.10);--line-strong:rgba(23,20,37,0.16);
+    --accent:#5A46F0;--accent-2:#7A66FF;--accent-soft:rgba(90,70,240,0.09);--spark:#FF6A4D;--spark-soft:rgba(255,106,77,0.10);
+    --font:"Pretendard","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;--maxw:1120px;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --ground:#100E18;--surface:#191624;--surface-2:#211D2E;--ink:#F4F2FB;--ink-soft:#C7C1D6;--muted:#948DA6;
+    --line:rgba(244,242,251,0.12);--line-strong:rgba(244,242,251,0.20);
+    --accent:#9A88FF;--accent-2:#B3A4FF;--accent-soft:rgba(154,136,255,0.15);--spark:#FF8A70;--spark-soft:rgba(255,138,112,0.15);}}
+  :root[data-theme="light"]{--ground:#FBFAF7;--surface:#FFFFFF;--surface-2:#F2F0EA;--ink:#171425;--ink-soft:#494456;--muted:#7C7688;--line:rgba(23,20,37,0.10);--line-strong:rgba(23,20,37,0.16);--accent:#5A46F0;--accent-2:#7A66FF;--accent-soft:rgba(90,70,240,0.09);--spark:#FF6A4D;--spark-soft:rgba(255,106,77,0.10);}
+  :root[data-theme="dark"]{--ground:#100E18;--surface:#191624;--surface-2:#211D2E;--ink:#F4F2FB;--ink-soft:#C7C1D6;--muted:#948DA6;--line:rgba(244,242,251,0.12);--line-strong:rgba(244,242,251,0.20);--accent:#9A88FF;--accent-2:#B3A4FF;--accent-soft:rgba(154,136,255,0.15);--spark:#FF8A70;--spark-soft:rgba(255,138,112,0.15);}
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);line-height:1.6;letter-spacing:-.01em;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:clamp(44px,6vw,80px) clamp(20px,5vw,40px);}
+  h1,h2,h3{margin:0;letter-spacing:-.025em;text-wrap:balance;word-break:keep-all;}
+  h1{font-size:clamp(31px,5vw,54px);font-weight:800;line-height:1.12;}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:18px;}
+  .eyebrow .bar{width:24px;height:2px;background:var(--spark);}
+  .lead{font-size:clamp(15px,1.7vw,19px);color:var(--ink-soft);line-height:1.62;max-width:52ch;margin-top:20px;}
+
+  .hero{border-bottom:1px solid var(--line);
+    background:radial-gradient(90% 120% at 92% -10%,var(--spark-soft),transparent 50%),radial-gradient(80% 110% at 0% 110%,var(--accent-soft),transparent 55%),var(--ground);}
+  .stats{display:flex;flex-wrap:wrap;gap:1px;margin-top:40px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+  .stats .s{background:var(--surface);padding:20px 24px;flex:1 1 150px;}
+  .stats .s .n{font-size:clamp(23px,3vw,34px);font-weight:800;color:var(--accent);letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1;}
+  .stats .s .l{font-size:12.5px;color:var(--muted);margin-top:8px;}
+
+  .group{margin-top:clamp(36px,5vw,58px);}
+  .group h2{font-size:14px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.13em;color:var(--muted);font-weight:700;display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+  .group h2::after{content:"";flex:1;height:1px;background:var(--line);}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media (max-width:860px){.grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.grid{grid-template-columns:1fr;}}
+
+  .card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;transition:.16s ease;position:relative;}
+  .card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 18px 36px -20px rgba(90,70,240,.45);}
+  .card .top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;}
+  .card .em{font-size:25px;line-height:1;}
+  .pill{display:inline-flex;align-items:center;padding:5px 11px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:11.5px;font-weight:700;white-space:nowrap;}
+  .pill.bundle{background:var(--spark-soft);color:var(--spark);}
+  .card h3{font-size:19px;font-weight:800;}
+  .card .angle{font-size:13.5px;color:var(--ink-soft);line-height:1.55;margin-top:8px;flex:1;}
+  .card .open{margin-top:18px;font-size:13.5px;font-weight:800;color:var(--accent);display:inline-flex;align-items:center;gap:6px;}
+  .card .open .arw{transition:.15s;}
+  .card:hover .open .arw{transform:translateX(3px);}
+
+  .note{margin-top:clamp(38px,5vw,58px);background:var(--surface-2);border:1px solid var(--line);border-radius:16px;padding:24px 26px;}
+  .note h3{font-size:15px;font-weight:800;margin-bottom:10px;}
+  .note ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:14px;line-height:1.6;}
+  .note li{margin-top:7px;}
+  .note b{color:var(--ink);}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-family:var(--mono);font-size:12px;letter-spacing:.02em;}
+  footer .wrap{padding-top:32px;padding-bottom:44px;}
+</style>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="bar"></span> Braze · 업종별 맞춤 제안</div>
+    <h1>업종별 <span style="color:var(--accent)">Braze</span> 맞춤 제안 모음</h1>
+    <p class="lead">업종마다 다른 과제 맥락에 맞춰 제작한 Braze 제안 모음입니다. 카드를 눌러 각 문서를 여세요.</p>
+    <div class="stats">
+      <div class="s"><div class="n">15</div><div class="l">맞춤 덱</div></div>
+      <div class="s"><div class="n">6</div><div class="l">세그먼트</div></div>
+      <div class="s"><div class="n">2</div><div class="l">Amplitude+Braze 번들</div></div>
+      <div class="s"><div class="n">10~11</div><div class="l">섹션 / 덱</div></div>
+    </div>
+  </div>
+</section>
+<div class="wrap">
+
+  <div class="group">
+    <h2>✈️ 여행</h2>
+    <div class="grid">
+      <a class="card" href="https://mkt-os.ab180.co/p/braze-jejuair-630605d7708bd0daa61ae85565e8d6b7" target="_blank" rel="noopener">
+        <div class="top"><span class="em">✈️</span><span class="pill">여행</span></div>
+        <h3>제주항공</h3><p class="angle">검색에서 예약, 탑승, 다음 여행까지 여정 라이프사이클 전체를 개인화.</p>
+        <span class="open">덱 열기 <span class="arw">→</span></span>
+      </a>
+      <a class="card" href="https://mkt-os.ab180.co/p/braze-hanatour-96f86424ecaa6d14bcc2ca72b769d233" target="_blank" rel="noopener">
+        <div class="top"><span class="em">🧳</span><span class="pill">여행</span></div>
+        <h3>하나투어</h3><p class="angle">예약 이탈 복구와 관심 여행지 특가·가격 트리거, 재예약.</p>
+        <span class="open">덱 열기 <span class="arw">→</span></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2>🛍️ 커머스 · 리테일</h2>
+    <div class="grid">
+      <a class="card" href="https://mkt-os.ab180.co/p/braze-hagohaus-538b77bfcfe30289677001a873548db8" target="_blank" rel="noopener">
+        <div class="top"><span class="em">🛍️</span><span class="pill">패션 커머스</span></div>
+        <h3>하고하우스</h3><p class="angle">신상 드롭 알림, 장바구니 이탈 복구, 재구매.</p>
+        <span class="open">덱 열기 <span class="arw">→</span></span>
+      </a>
+      <a class="card" href="https://mkt-os.ab180.co/p/braze-bgf-retail-d8ffbdcca19e6bd915afe267c1daf817" target="_blank" rel="noopener">
+        <div class="top"><span class="em">🏪</span><span class="pill">리테일</span></div>
+        <h3>BGF리테일 (CU)</h3><p class="angle">멤버십 앱 리텐션, 오프라인 매장 연계, 재방문.</p>
+        <span class="open">덱 열기 <span class="arw">→</span></span>
+      </a>
+      <a class="card" href="https://mkt-os.ab180.co/p/braze-bunkerkids-78a003723a53f7c3d065a58245c190b7" target="_blank" rel="noopener">
+        <div class="top"><span class="em">🍱</span><span class="pill">F&amp;B 커머스</span></div>
+        <h3>벙커키즈</h3><p class="angle">재구매와 정기배송, 시즌 오퍼, 로열티.</p>
+        <span class="open">덱 열기 <span class="arw">→</span></span>
+      </a>
+      <a class="card" href="https://mkt-os.ab180.co/p/braze-isoi-9b47d2cecc3d00b1d4f92e654ea15075" target="_blank" rel="noopener">
+        <div class="top"><span class="em">🫐</span><span class="pill">뷰티 커머스</span></div>
+        <h3>아이소이</h3><p class="angle">소진 주기 재구매, 장바구니 이탈, 신제품·리뷰.</p>
+        <span class="open">덱 열기 <span class="arw">→</span></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2>📖 구독 · 콘텐츠</h2>
+    <div class="grid">
+      <a class="card" href="https://mkt-os.ab180.co/p/braze-millie-54e44d353fa063a650f71956ced01a57" target="_blank" rel="noopener">
+        <div class="top"><span class="em">📖</span><span class="pill">독서 구독</span></div>
+        <h3>밀리의서재</h3><p class="angle">무료에서 유료 전환, 완독 리텐션, 해지 방어·휴면 복귀.</p>
+        <span class="open">덱 열기 <span class="arw">→</span></span>
+      </a>
+      <a class="card" href="https://mkt-os.ab180.co/p/braze-mrblue-e84b8545d0dfd605893549213fd18e6d" target="_blank" rel="noopener">
+        <div class="top"><span class="em">📘</span><span class="pill">웹툰·웹소설</span></div>
+        <h3>미스터블루</h3><p class="angle">연재 회차 알림, 코인·이용권 결제 전환, 이어보기.</p>
+        <span class="open">덱 열기 <span class="arw">→</span></span>
+      </a>
+      <a class="card" href="https://mkt-os.ab180.co/p/braze-melon-7b662cc56b416c2ae538f577bc065aae" target="_blank" rel="noopener">
+        <div class="top"><span class="em">🎵</span><span class="pill">음악 구독</span></div>
+        <h3>멜론 (카카오엔터)</h3><p class="angle">음악 구독 리텐션, 해지 방어, 개인화 추천.</p>
+        <span class="open">덱 열기 <span class="arw">→</span></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2>💳 핀테크 · 금융</h2>
+    <div class="grid">
+      <a class="card" href="https://mkt-os.ab180.co/p/braze-jobisnvillains-336f5d30e915a0a92114e850329cb1cc" target="_blank" rel="noopener">
+        <div class="top"><span class="em">💸</span><span class="pill">핀테크 · 세무</span></div>
+        <h3>자비스앤빌런즈</h3><p class="angle">온보딩과 환급 신청 전환, 세금 시즌 재방문.</p>
+        <span class="open">덱 열기 <span class="arw">→</span></span>
+      </a>
+      <a class="card" href="https://mkt-os.ab180.co/p/braze-bccard-df911b9ac141d13346a81968aa9eef47" target="_blank" rel="noopener">
+        <div class="top"><span class="em">💳</span><span class="pill">카드 · 핀테크</span></div>
+        <h3>BC카드</h3><p class="angle">혜택·프로모션 개인화 알림, 앱 활성화, 알림톡·CDI.</p>
+        <span class="open">덱 열기 <span class="arw">→</span></span>
+      </a>
+      <a class="card" href="https://mkt-os.ab180.co/p/braze-danal-3bcc2937ce3b2ca3f1b84b3fd0d38458" target="_blank" rel="noopener">
+        <div class="top"><span class="em">💰</span><span class="pill">결제 · 핀테크</span></div>
+        <h3>다날</h3><p class="angle">결제 유저 활성화, 프로모션, 재결제·크로스셀.</p>
+        <span class="open">덱 열기 <span class="arw">→</span></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2>🔗 Amplitude + Braze 번들</h2>
+    <div class="grid">
+      <a class="card" href="https://mkt-os.ab180.co/p/braze-lf-d72aabd0c2408e4666292236f190536e" target="_blank" rel="noopener">
+        <div class="top"><span class="em">🕶️</span><span class="pill bundle">패션 · 번들</span></div>
+        <h3>LF</h3><p class="angle">이해(Amplitude)에서 행동(Braze), 다시 측정으로 닫힌 루프 완성.</p>
+        <span class="open">덱 열기 <span class="arw">→</span></span>
+      </a>
+      <a class="card" href="https://mkt-os.ab180.co/p/braze-station3-0619e2ae73d019343de7c4a70e330542" target="_blank" rel="noopener">
+        <div class="top"><span class="em">🏠</span><span class="pill bundle">부동산앱 · 번들</span></div>
+        <h3>스테이션3 (다방)</h3><p class="angle">관심 매물 실시간 트리거와 Amplitude·Braze 그로스 루프.</p>
+        <span class="open">덱 열기 <span class="arw">→</span></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2>◇ 럭셔리</h2>
+    <div class="grid">
+      <a class="card" href="https://mkt-os.ab180.co/p/braze-chanel-e1bdd6a0b60c4a8144d3d18ef56fc201" target="_blank" rel="noopener">
+        <div class="top"><span class="em">🖤</span><span class="pill">럭셔리</span></div>
+        <h3>샤넬</h3><p class="angle">VIP 개인화, 컬렉션 프리뷰, 부티크 초대를 절제된 톤으로.</p>
+        <span class="open">덱 열기 <span class="arw">→</span></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="note">
+    <h3>안내</h3>
+    <ul>
+      <li>각 문서는 업종별 과제에 맞춰 구성한 Braze 제안입니다. 카드를 눌러 문서를 여세요.</li>
+      <li>성과 수치·사례는 Braze 공개자료와 AB180 CS Hub의 공개 사례를 근거로 하며, 각 사례의 원문 링크를 문서 안에 함께 제공합니다.</li>
+      <li>본 자료의 지표·조건은 확정된 것이 아닙니다.</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">AB180 INC. · Braze 파트너 &nbsp;|&nbsp; MGS2026 Sales Enablement &nbsp;|&nbsp; 양관승 · kwanseung@ab180.co · www.ab180.co</div>
+</footer>
